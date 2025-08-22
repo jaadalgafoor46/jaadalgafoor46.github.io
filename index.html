@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaad Al Gafoor | Portfolio</title>
+  <style>
+    * {margin:0;padding:0;box-sizing:border-box;font-family:'Helvetica Neue',sans-serif;}
+    body {background:#f5f5f5;color:#111;line-height:1.6;scroll-behavior:smooth;transition:background 0.4s,color 0.4s;overflow-x:hidden;}
+    body.dark{background:#111;color:#f5f5f5;}
+    header{background:rgba(255,255,255,0.9);display:flex;justify-content:space-between;align-items:center;padding:1rem 3rem;position:fixed;top:0;left:0;right:0;z-index:1000;backdrop-filter:blur(10px);box-shadow:0 2px 5px rgba(0,0,0,0.05);transition:background 0.4s,color 0.4s;}
+    body.dark header{background:rgba(20,20,20,0.9);box-shadow:0 2px 5px rgba(255,255,255,0.05);}
+    header h1{font-size:1.5rem;font-weight:800;letter-spacing:2px;}
+    nav a{margin:0 1rem;text-decoration:none;color:inherit;font-weight:500;transition:0.3s;}
+    nav a:hover{color:#888;}
+    .toggle-btn{padding:0.5rem 1rem;border:2px solid #111;background:transparent;border-radius:20px;cursor:pointer;font-size:0.9rem;transition:0.3s;}
+    body.dark .toggle-btn{border-color:#f5f5f5;color:#f5f5f5;}
+    .hero{height:100vh;background:url('https://plus.unsplash.com/premium_photo-1754433115781-a0f536b10258?q=80&w=1025&auto=format&fit=crop') no-repeat center/cover;display:flex;justify-content:center;align-items:center;text-align:center;flex-direction:column;padding:2rem;color:white;background-attachment:fixed;position:relative;overflow:hidden;}
+    .hero::after{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.4);}
+    .hero-content{z-index:2;}
+    .hero h2{font-size:3.5rem;font-weight:900;animation:fadeInUp 1.2s ease-in-out;}
+    .hero p{font-size:1.3rem;margin-top:1rem;animation:fadeInUp 1.6s ease-in-out;}
+    .btn{margin-top:2rem;background:#fff;color:#111;padding:0.9rem 2.2rem;border:none;border-radius:30px;font-size:1rem;cursor:pointer;transition:0.3s;}
+    .btn:hover{background:#111;color:#fff;}
+    .sliding-text{position:absolute;bottom:10%;left:0;width:100%;white-space:nowrap;overflow:hidden;z-index:1;}
+    .sliding-text h1{display:inline-block;font-size:6rem;font-weight:900;text-transform:uppercase;color:rgba(255,255,255,0.1);animation:slideText 20s linear infinite;}
+    @keyframes slideText{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+    section{padding:6rem 10%;opacity:0;transform:translateY(50px);transition:all 0.8s ease-out;}
+    section.show{opacity:1;transform:translateY(0);}
+    h3{font-size:2.2rem;margin-bottom:1rem;text-align:center;}
+    p{text-align:center;max-width:800px;margin:auto;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:2rem;}
+    .card{background:#fff;padding:2rem;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.08);transition:transform 0.4s,background 0.4s,color 0.4s;text-align:center;}
+    .card:hover{transform:translateY(-8px);}
+    body.dark .card{background:#1c1c1c;color:#f5f5f5;box-shadow:0 5px 15px rgba(255,255,255,0.08);}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+    footer{text-align:center;padding:2rem;background:#111;color:#fff;font-size:0.9rem;}
+    body.dark footer{background:#000;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>JAAD</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#internship">Internship</a>
+      <a href="#awards">Awards</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="toggle-btn" id="themeToggle">🌙 Dark</button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Jaad Al Gafoor</h2>
+      <p>Masters of Computer Application | AI & Cybersecurity Enthusiast | Data Science & Power BI Developer</p>
+      <button class="btn" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Explore My Work</button>
+    </div>
+    <div class="sliding-text">
+      <h1>INNOVATION • TECHNOLOGY • DATA • AI • CYBERSECURITY •</h1>
+      <h1>INNOVATION • TECHNOLOGY • DATA • AI • CYBERSECURITY •</h1>
+    </div>
+  </section>
+
+  <section id="about">
+    <h3>About Me</h3>
+    <p>Email: <a href="mailto:jaadalgafoor46@gmail.com">jaadalgafoor46@gmail.com</a> | Phone: +91 8921498101 | Bangalore, India<br>
+       GitHub: <a href="https://github.com/jaadalgafoor46" target="_blank">github.com/jaadalgafoor46</a>
+    </p>
+  </section>
+
+  <section id="skills">
+    <h3>Skills</h3>
+    <div class="grid">
+      <div class="card">AI Tools: ChatGPT, Deepseek, Gamma, Lovable</div>
+      <div class="card">Programming: Python, C++, MySQL, Java</div>
+      <div class="card">Dashboarding: Power BI, Tableau</div>
+      <div class="card">ML Algorithms: Decision Trees, Random Forest, SVM, KNN, Naive Bayes</div>
+      <div class="card">Kali Linux: Metasploit, Wireshark, John The Ripper</div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h3>Education</h3>
+    <div class="grid">
+      <div class="card"><h4>Master of Computer Application</h4><p>Acharya Institute of Graduate Studies / Bangalore City University<br>12/2023 – 10/2025 | Bangalore, India</p></div>
+      <div class="card"><h4>Bachelor of Computer Application</h4><p>Yenepoya University, Mangalore<br>10/2020 – 06/2023</p></div>
+      <div class="card"><h4>Primary & Secondary Education</h4><p>RIMS International School, Kannur, Kerala</p></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h3>Projects</h3>
+    <div class="grid">
+      <div class="card"><h4>Credit Card Churn Analysis</h4><p>98%+ accuracy using Decision Tree & Random Forest, customer segmentation, business insights.</p></div>
+      <div class="card"><h4>Fertility Rate Analysis</h4><p>Explored demographic shifts, future projections, informed policy insights.</p></div>
+      <div class="card"><h4>Inventory Management System</h4><p>Optimized stock tracking, reduced costs, improved supply chain efficiency.</p></div>
+    </div>
+  </section>
+
+  <section id="internship">
+    <h3>Internship</h3>
+    <div class="grid">
+      <div class="card"><h4>Business Analyst Intern</h4><p>Bluecast Technologies | 07/2025 – 09/2025<br>Customized Tally ERP with TDL, automated workflows, built Power BI dashboards.</p></div>
+      <div class="card"><h4>Data Science Intern</h4><p>Cognitive Solutions | 05/2022 – 07/2022<br>Worked with Python (NumPy, Pandas, Matplotlib), ML models, delivered accurate analysis.</p></div>
+    </div>
+  </section>
+
+  <section id="awards">
+    <h3>Awards</h3>
+    <div class="grid">
+      <div class="card"><h4>First Place - Digital Collage</h4><p>InfoVision 2K22, AIMIT Beeri (06/09/2022)</p></div>
+    </div>
+  </section>
+
+  <section id="certificates">
+    <h3>Certificates</h3>
+    <div class="grid">
+      <div class="card">Cyber Security Advanced Certificate - IBM</div>
+      <div class="card">Cybersecurity Threat Landscape - LinkedIn</div>
+      <div class="card">Introduction to Python - Arizona State University</div>
+      <div class="card">Cyber Security Workshop - EyeQ Dot Net Pvt Ltd</div>
+      <div class="card">Advanced Power BI: DAX - LinkedIn</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h3>Contact</h3>
+    <p>Email: <a href="mailto:jaadalgafoor46@gmail.com">jaadalgafoor46@gmail.com</a></p>
+    <p>Phone: <a href="tel:8921498101">+91 8921498101</a></p>
+    <p>GitHub: <a href="https://github.com/jaadalgafoor46" target="_blank">github.com/jaadalgafoor46</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Jaad Al Gafoor | Designed with ❤️
+  </footer>
+
+  <script>
+    const sections=document.querySelectorAll("section");
+    const revealOnScroll=()=>{const triggerBottom=window.innerHeight*0.85;sections.forEach(sec=>{const secTop=sec.getBoundingClientRect().top;if(secTop<triggerBottom){sec.classList.add("show");}})};
+    window.addEventListener("scroll",revealOnScroll);
+    window.addEventListener("load",revealOnScroll);
+    const toggleBtn=document.getElementById("themeToggle");
+    toggleBtn.addEventListener("click",()=>{document.body.classList.toggle("dark");toggleBtn.textContent=document.body.classList.contains("dark")?"☀️ Light":"🌙 Dark";});
+  </script>
+</body>
+</html>
