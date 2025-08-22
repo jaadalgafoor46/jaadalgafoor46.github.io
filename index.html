@@ -1,64 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jaad Al Gafoor | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> "JAAD AL GAFOOR "| Portfolio</title>
   <style>
-    * {margin:0;padding:0;box-sizing:border-box;font-family:'Helvetica Neue',sans-serif;}
-    body {background:#f5f5f5;color:#111;line-height:1.6;scroll-behavior:smooth;transition:background 0.4s,color 0.4s;overflow-x:hidden;}
-    body.dark{background:#111;color:#f5f5f5;}
-    header{background:rgba(255,255,255,0.9);display:flex;justify-content:space-between;align-items:center;padding:1rem 3rem;position:fixed;top:0;left:0;right:0;z-index:1000;backdrop-filter:blur(10px);box-shadow:0 2px 5px rgba(0,0,0,0.05);transition:background 0.4s,color 0.4s;}
-    body.dark header{background:rgba(20,20,20,0.9);box-shadow:0 2px 5px rgba(255,255,255,0.05);}
-    header h1{font-size:1.5rem;font-weight:800;letter-spacing:2px;}
-    nav a{margin:0 1rem;text-decoration:none;color:inherit;font-weight:500;transition:0.3s;}
-    nav a:hover{color:#888;}
-    .toggle-btn{padding:0.5rem 1rem;border:2px solid #111;background:transparent;border-radius:20px;cursor:pointer;font-size:0.9rem;transition:0.3s;}
-    body.dark .toggle-btn{border-color:#f5f5f5;color:#f5f5f5;}
-    .hero{height:100vh;background:url('https://plus.unsplash.com/premium_photo-1754433115781-a0f536b10258?q=80&w=1025&auto=format&fit=crop') no-repeat center/cover;display:flex;justify-content:center;align-items:center;text-align:center;flex-direction:column;padding:2rem;color:white;background-attachment:fixed;position:relative;overflow:hidden;}
-    .hero::after{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.4);}
-    .hero-content{z-index:2;}
-    .hero h2{font-size:3.5rem;font-weight:900;animation:fadeInUp 1.2s ease-in-out;}
-    .hero p{font-size:1.3rem;margin-top:1rem;animation:fadeInUp 1.6s ease-in-out;}
-    .btn{margin-top:2rem;background:#fff;color:#111;padding:0.9rem 2.2rem;border:none;border-radius:30px;font-size:1rem;cursor:pointer;transition:0.3s;}
-    .btn:hover{background:#111;color:#fff;}
-    .sliding-text{position:absolute;bottom:10%;left:0;width:100%;white-space:nowrap;overflow:hidden;z-index:1;}
-    .sliding-text h1{display:inline-block;font-size:6rem;font-weight:900;text-transform:uppercase;color:rgba(255,255,255,0.1);animation:slideText 20s linear infinite;}
-    @keyframes slideText{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-    section{padding:6rem 10%;opacity:0;transform:translateY(50px);transition:all 0.8s ease-out;}
-    section.show{opacity:1;transform:translateY(0);}
-    h3{font-size:2.2rem;margin-bottom:1rem;text-align:center;}
-    p{text-align:center;max-width:800px;margin:auto;}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:2rem;}
-    .card{background:#fff;padding:2rem;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.08);transition:transform 0.4s,background 0.4s,color 0.4s;text-align:center;}
-    .card:hover{transform:translateY(-8px);}
-    body.dark .card{background:#1c1c1c;color:#f5f5f5;box-shadow:0 5px 15px rgba(255,255,255,0.08);}
-    @keyframes fadeInUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
-    footer{text-align:center;padding:2rem;background:#111;color:#fff;font-size:0.9rem;}
-    body.dark footer{background:#000;}
+    /* Reset & Global */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+      color: #111;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      transition: background 0.4s, color 0.4s;
+      overflow-x: hidden;
+    }
+
+    body.dark {
+      background: #111;
+      color: #f5f5f5;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 3rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: background 0.4s, color 0.4s;
+    }
+
+    body.dark header {
+      background: rgba(20, 20, 20, 0.9);
+      box-shadow: 0 2px 5px rgba(255,255,255,0.05);
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: inherit;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #888;
+    }
+
+    .toggle-btn {
+      padding: 0.5rem 1rem;
+      border: 2px solid #111;
+      background: transparent;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+
+    body.dark .toggle-btn {
+      border-color: #f5f5f5;
+      color: #f5f5f5;
+    }
+
+    /* Hero with parallax */
+    .hero {
+      height: 100vh;
+      background: url('https://plus.unsplash.com/premium_photo-1754433115781-a0f536b10258?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+        no-repeat center center/cover;
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 2rem;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      transition: background-position 0.1s ease-out;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+    }
+
+    .hero-content {
+      z-index: 2;
+      position: relative;
+      transform: translateY(0);
+      transition: transform 0.5s ease-out;
+    }
+
+    .hero h2 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      text-shadow: 0 0 10px rgba(255,255,255,0.8),
+                   0 0 20px rgba(102,166,255,0.6);
+      animation: glowPulse 3s infinite alternate;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-top: 1rem;
+      animation: fadeInUp 1.6s ease-in-out;
+    }
+
+    @keyframes glowPulse {
+      from { text-shadow: 0 0 5px rgba(255,255,255,0.5); }
+      to { text-shadow: 0 0 20px rgba(102,166,255,1); }
+    }
+
+    .btn {
+      margin-top: 2rem;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      color: #111;
+      padding: 0.9rem 2.2rem;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+      color: #fff;
+      box-shadow: 0 0 15px rgba(102,166,255,0.7);
+    }
+
+    /* Sliding Text Banner */
+    .sliding-text {
+      position: absolute;
+      bottom: 10%;
+      left: 0;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .sliding-text h1 {
+      display: inline-block;
+      font-size: 6rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.1);
+      animation: slideText 20s linear infinite;
+    }
+
+    @keyframes slideText {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Particles */
+    .particles {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .particle {
+      position: absolute;
+      width: 6px; height: 6px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 50%;
+      animation: float 15s linear infinite;
+    }
+    @keyframes float {
+      from { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      to { transform: translateY(-10vh) scale(1.2); opacity: 1; }
+    }
+
+    /* Sections */
+    section:not(.hero) {
+      padding: 6rem 10%;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h3 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      color: inherit;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.4s, box-shadow 0.4s, background 0.4s, color 0.4s;
+    }
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+    body.dark .card {
+      background: rgba(30,30,30,0.6);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #f5f5f5;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      color: #fff;
+      font-size: 0.9rem;
+      transition: background 0.4s, color 0.4s;
+    }
+
+    body.dark footer {
+      background: #000;
+    }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
     <h1>JAAD</h1>
     <nav>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
       <a href="#projects">Projects</a>
-      <a href="#internship">Internship</a>
-      <a href="#awards">Awards</a>
-      <a href="#certificates">Certificates</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="toggle-btn" id="themeToggle">🌙 Dark</button>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
+    <div class="particles"></div>
     <div class="hero-content">
-      <h2>Jaad Al Gafoor</h2>
-      <p>Masters of Computer Application | AI & Cybersecurity Enthusiast | Data Science & Power BI Developer</p>
-      <button class="btn" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Explore My Work</button>
+      <h2>JAAD AL GAFOOR </h2>
+      <p>AI & ML | Cybersecurity Enthusiast | Data Analyst & Power BI Developer</p>
+      <button class="btn" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+        Explore My Work
+      </button>
     </div>
     <div class="sliding-text">
       <h1>INNOVATION • TECHNOLOGY • DATA • AI • CYBERSECURITY •</h1>
@@ -66,86 +298,108 @@
     </div>
   </section>
 
+  <!-- About -->
   <section id="about">
     <h3>About Me</h3>
-    <p>Email: <a href="mailto:jaadalgafoor46@gmail.com">jaadalgafoor46@gmail.com</a> | Phone: +91 8921498101 | Bangalore, India<br>
-       GitHub: <a href="https://github.com/jaadalgafoor46" target="_blank">github.com/jaadalgafoor46</a>
+    <p>
+      I am a highly motivated and dedicated professional with a Master of Computer Applications (MCA) and a strong foundation in Data Analytics, Artificial Intelligence, and Cybersecurity. Certified by IBM in Cyber Security, Cyber Forensics, and Data Analytics, I am passionate about leveraging technology to deliver data-driven insights, secure digital environments, and innovative business solutions.
+
+Alongside my technical expertise, I bring a strong interest in business strategy, leadership, and decision-making, aspiring to bridge the gap between technology and management. Beyond the tech world, I am also deeply interested in design—including fashion, product, and interior design—where creativity meets functionality. This passion enhances my ability to think differently, blending analytical precision with artistic vision.
+
+As an enthusiastic lifelong learner, I stay updated with the latest in AI, Data Science, Cybersecurity, Business Intelligence, and Global Design Trends, while preparing to grow into management and leadership roles. With a unique mix of technical expertise, business acumen, and creative design thinking, I am confident in my ability to contribute innovation, security, and value to forward-looking organizations.
     </p>
   </section>
 
+  <!-- Skills -->
   <section id="skills">
     <h3>Skills</h3>
     <div class="grid">
-      <div class="card">AI Tools: ChatGPT, Deepseek, Gamma, Lovable</div>
-      <div class="card">Programming: Python, C++, MySQL, Java</div>
-      <div class="card">Dashboarding: Power BI, Tableau</div>
-      <div class="card">ML Algorithms: Decision Trees, Random Forest, SVM, KNN, Naive Bayes</div>
-      <div class="card">Kali Linux: Metasploit, Wireshark, John The Ripper</div>
+      <div class="card">Python</div>
+       <div class="card"> Java</div>
+       <div class="card"> C++</div>
+       <div class="card"> MySQL</div>
+      <div class="card">Power BI</div>
+      <div class="card"> Tableau</div>
+      <div class="card">Cybersecurity & Kali Linux Tools</div>
+      <div class="card">Machine Learning (SVM, KNN, ANN Random Forest)</div>
     </div>
   </section>
 
-  <section id="education">
-    <h3>Education</h3>
-    <div class="grid">
-      <div class="card"><h4>Master of Computer Application</h4><p>Acharya Institute of Graduate Studies / Bangalore City University<br>12/2023 – 10/2025 | Bangalore, India</p></div>
-      <div class="card"><h4>Bachelor of Computer Application</h4><p>Yenepoya University, Mangalore<br>10/2020 – 06/2023</p></div>
-      <div class="card"><h4>Primary & Secondary Education</h4><p>RIMS International School, Kannur, Kerala</p></div>
-    </div>
-  </section>
-
+  <!-- Projects -->
   <section id="projects">
     <h3>Projects</h3>
     <div class="grid">
-      <div class="card"><h4>Credit Card Churn Analysis</h4><p>98%+ accuracy using Decision Tree & Random Forest, customer segmentation, business insights.</p></div>
-      <div class="card"><h4>Fertility Rate Analysis</h4><p>Explored demographic shifts, future projections, informed policy insights.</p></div>
-      <div class="card"><h4>Inventory Management System</h4><p>Optimized stock tracking, reduced costs, improved supply chain efficiency.</p></div>
+      <div class="card">
+        <h4>Credit Card Churn Analysis</h4>
+        <p>Built ML models achieving 98%+ accuracy in churn prediction.</p>
+      </div>
+      <div class="card">
+        <h4>Fertility Rate Analysis</h4>
+        <p>Analyzed global demographic trends with predictive insights.</p>
+      </div>
+      <div class="card">
+        <h4>Inventory Management System</h4>
+        <p>Optimized stock tracking & supply chain efficiency.</p>
+      </div>
     </div>
   </section>
 
-  <section id="internship">
-    <h3>Internship</h3>
-    <div class="grid">
-      <div class="card"><h4>Business Analyst Intern</h4><p>Bluecast Technologies | 07/2025 – 09/2025<br>Customized Tally ERP with TDL, automated workflows, built Power BI dashboards.</p></div>
-      <div class="card"><h4>Data Science Intern</h4><p>Cognitive Solutions | 05/2022 – 07/2022<br>Worked with Python (NumPy, Pandas, Matplotlib), ML models, delivered accurate analysis.</p></div>
-    </div>
-  </section>
-
-  <section id="awards">
-    <h3>Awards</h3>
-    <div class="grid">
-      <div class="card"><h4>First Place - Digital Collage</h4><p>InfoVision 2K22, AIMIT Beeri (06/09/2022)</p></div>
-    </div>
-  </section>
-
-  <section id="certificates">
-    <h3>Certificates</h3>
-    <div class="grid">
-      <div class="card">Cyber Security Advanced Certificate - IBM</div>
-      <div class="card">Cybersecurity Threat Landscape - LinkedIn</div>
-      <div class="card">Introduction to Python - Arizona State University</div>
-      <div class="card">Cyber Security Workshop - EyeQ Dot Net Pvt Ltd</div>
-      <div class="card">Advanced Power BI: DAX - LinkedIn</div>
-    </div>
-  </section>
-
+  <!-- Contact -->
   <section id="contact">
     <h3>Contact</h3>
     <p>Email: <a href="mailto:jaadalgafoor46@gmail.com">jaadalgafoor46@gmail.com</a></p>
     <p>Phone: <a href="tel:8921498101">+91 8921498101</a></p>
     <p>GitHub: <a href="https://github.com/jaadalgafoor46" target="_blank">github.com/jaadalgafoor46</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/jaad-al-gafoor-59b82321a" target="_blank">https://www.linkedin.com/in/jaad-al-gafoor-59b82321a</a></p>
   </section>
 
+  <!-- Footer -->
   <footer>
-    &copy; 2025 Jaad Al Gafoor | Designed with ❤️
+    &copy; 2025 JAAD AL GAFOOR | Designed with ❤️
   </footer>
 
+  <!-- Scripts -->
   <script>
-    const sections=document.querySelectorAll("section");
-    const revealOnScroll=()=>{const triggerBottom=window.innerHeight*0.85;sections.forEach(sec=>{const secTop=sec.getBoundingClientRect().top;if(secTop<triggerBottom){sec.classList.add("show");}})};
-    window.addEventListener("scroll",revealOnScroll);
-    window.addEventListener("load",revealOnScroll);
-    const toggleBtn=document.getElementById("themeToggle");
-    toggleBtn.addEventListener("click",()=>{document.body.classList.toggle("dark");toggleBtn.textContent=document.body.classList.contains("dark")?"☀️ Light":"🌙 Dark";});
+    // Section reveal on scroll
+    const sections = document.querySelectorAll("section:not(.hero)");
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(sec => {
+        const secTop = sec.getBoundingClientRect().top;
+        if (secTop < triggerBottom) {
+          sec.classList.add("show");
+        }
+      });
+    };
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+
+    // Dark Mode Toggle
+    const toggleBtn = document.getElementById("themeToggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️ Light" : "🌙 Dark";
+    });
+
+    // Floating particles
+    const particlesContainer = document.querySelector(".particles");
+    for (let i = 0; i < 40; i++) {
+      const particle = document.createElement("div");
+      particle.classList.add("particle");
+      particle.style.left = Math.random() * 100 + "vw";
+      particle.style.animationDuration = 10 + Math.random() * 10 + "s";
+      particle.style.animationDelay = Math.random() * 5 + "s";
+      particlesContainer.appendChild(particle);
+    }
+
+    // Hero background parallax
+    window.addEventListener("scroll", () => {
+      const hero = document.querySelector(".hero");
+      const heroContent = document.querySelector(".hero-content");
+      const offset = window.scrollY * 0.5;
+      hero.style.backgroundPosition = `center calc(50% + ${offset}px)`;
+      heroContent.style.transform = `translateY(${offset * 0.4}px)`;
+    });
   </script>
 </body>
 </html>
